@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questionnaire</h1>
+    <form id="questionnaireForm" action="submit.php" method="POST">
+        <div class="question">
+            <label for="name">1. What is your name?</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="question">
+            <label for="age">2. What is your age?</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="question">
+            <label for="email">3. What is your email address?</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="question">
+            <label for="education">4. What is your highest level of education?</label>
+            <input type="text" id="education" name="education" required>
+        </div>
+        <div class="question">
+            <label for="workExperience">5. Describe your work experience:</label><br>
+            <textarea id="workExperience" name="workExperience" rows="4" required></textarea>
+        </div>
+        <div class="question">
+            <label for="feedback">6. Please provide your feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
