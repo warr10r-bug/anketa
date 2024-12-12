@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .captcha-container {
+            margin-bottom: 20px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Captcha Verification</h1>
+    <form id="captchaForm" onsubmit="return validateCaptcha()">
+        <div class="captcha-container">
+            <label for="captcha">What is 3 + 2?</label>
+            <input type="text" id="captcha" required>
+            <span class="error" id="captchaError" style="display: none;">Incorrect answer. Please try again.</span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 
+    <script>
+        function validateCaptcha() {
+            const captchaInput = document.getElementById('captcha').value;
+            const captchaError = document.getElementById('captchaError');
+
+            if (captchaInput !== '5') { // The answer to the captcha question
+                captchaError.style.display = 'block';
+                return false; // Prevent form submission
+            }
+
+            // If captcha validation passes, redirect to questionnaire
+            window.location.href = 'questionnaire.html';
+            return false; // Prevent form submission as we are using redirection
+        }
+    </script>
+</body>
+</html>
